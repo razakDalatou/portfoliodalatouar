@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>DalatouAr | Portfolio </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="asset/profile-pic (1).png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="asset/css/all.min.css">
+</head>
+
+<body>
+	<header>
+		<h2>Dalatou<span class="ar">Ar.</span></h2>
+		<nav>
+			<ul>
+				<li><a href="#hero">Accuiel</a></li>
+				<li><a href="#apropos">A propos de moi</a></li>
+				<li><a href="#album">Mes projets</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<a href="tel:+22790695176">
+			<button id="apel" type="button">
+				<i class="fa-solid fa-phone"></i>&nbsp;+227 90 69 51 76
+			</button>
+		</a>
+	</header>
+	<main>
+		<!--Premiere section-->
+		<section id="hero">
+			<div class="gauche">
+				<h1>Bonjour, je suis Abdoul Razak Dalatou !</h1>
+				<p><span>Ingénieur Logiciel passionné.</span><br>
+					À travers chaque projet, je consolide mes compétences en créant des solutions digitales fiables et
+					adaptées. Curieux et engagé, je cherche à grandir aux côtés d'équipes inspirantes et à contribuer à
+					des projets concrets.
+				</p>
+				<a href="https://www.github.com/in/ton-profil" target="_blank" class="button">
+					<i class="fa-brands fa-square-github"></i>&nbsp;Voir mes projets.
+				</a>
+				<a href="https://www.linkedin.com/in/ton-profil" target="_blank" class="button">
+					<i class="fa-brands fa-linkedin"></i>&nbsp;Discutons ensemble.
+				</a>
+			</div>
+			<div class="droite">
+				<img src="asset/dalatou.jpg">
+			</div>
+		</section>
+		<!--Deuxieme section-->
+		<section id="apropos">
+			<h2>A propos de moi</h2>
+			<hr class="separator">
+			<div class="aproposglobal">
+				<div class="aproposGauche">
+					<h3>Formation</h3>
+					<p>Master en Génie Logiciel à
+						<br>ESCEP-Niger.</br>
+					</p>
+				</div>
+				<div class="aproposmilieu">
+					<h3>Experience Pro</h3>
+					<p>Shaawa Media Services <br> <span>Nov-2023 à Fev-2025.</span></p>
+				</div>
+				<div class="aproposDroite">
+					<h3>Compétences</h3>
+					<ul>
+						<li>Développement web (HTML, CSS, JavaScript, PHP, Symfony, Bootstrap, Tailwind CSS)</li>
+						<li>Outils de gestion de version(Git, Github, bitbucket)</li>
+						<li>Gestion de bases de données(MYSQL, PostGreSQL)</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- Nouvelle section pour les réalisations -->
+		<section id="album">
+			<h2>Mes projets(récents)</h2>
+			<hr class="separator">
+			<div class="album-list">
+				<div class="gallerie">
+					<div class="image">
+						<img src="asset/connexion.png">
+						<div class="descriptions">
+							<h1>Projet 1</h1>
+							<p>Ce projet a été conçu lors de l'élaboration de mon mémoire</p>
+						</div>
+					</div>
+					<div class="image">
+						<img src="asset/connexion.png">
+						<div class="descriptions">
+							<h1>Projet 1</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit accusantium quam
+								doloremque unde reprehenderit illo error obcaecati cumque eveniet esse fugit, magnam,
+								inventore, maiores eos aliquid laudantium. Tempora, fugit?</p>
+						</div>
+					</div>
+					<div class="image">
+						<img src="asset/connexion.png">
+						<div class="descriptions">
+							<h1>Projet 1</h1>
+							<p>Ce projet a été conçu lors de l'élaboration de mon mémoire</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h4><i class="fa-solid fa-circle"></i>&nbsp;Pour voir tous mes projets, consultez mon
+				Git</h4>
+		</section>
+		<!-- Contact -->
+		<section id="contact">
+			<h2>Me contacter</h2>
+			<hr class="separator">
+			<div class="grandepartie">
+				<div class="partie1">
+					<p>
+						Vous pouvez directement me contacter au :
+						<a href="tel:+22790695176">
+							<button id="apel" type="button">
+								<i class="fa-solid fa-phone"></i>&nbsp;+227 90 69 51 76
+							</button>
+						</a><br>ou encore me laisser un
+						message
+						mail à travers ce formulaire, j'y repondrai !
+					</p>
+				</div>
+				<div class="partie2">
+					<form id="contact-form">
+						<input type="text" id="nom" name="nom" placeholder="Entrer votre nom" id="nom">
+						<input type="text" id="prenom" name="prenom" placeholder="Entrer votre prénom">
+						<input type="email" id="mail" name="mail" placeholder="Entrer votre mail(exemple@gmail.com)">
+						<textarea placeholder="Votre message" id="text" name="message"></textarea>
+						<button type="submit" id="btn-submit"><i
+								class="fa-solid fa-paper-plane"></i>&nbsp;Envoyer</button>
+					</form>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<p>&copy Conçu avec amour par <span>DalatouAr </span>2025. Tout droit réservé !</p>
+		</footer>
+		<script>
+
+			document.addEventListener("DOMContentLoaded", () => {
+				document.querySelector("#btn-submit").addEventListener("click", (event) => {
+					event.preventDefault();
+
+					let formData = new FormData();
+
+					formData.append("nom", document.querySelector("#nom").value.trim());
+					formData.append("prenom", document.querySelector("#prenom").value.trim());
+					formData.append("mail", document.querySelector("#mail").value.trim());
+					formData.append("text", document.querySelector("#text").value.trim());
+					console.log(formData);
+
+					fetch('contact.php', {
+						method: 'POST',
+						body: formData
+					})
+						.then(response => response.json())
+						.then(data => {
+							if (data.status === "success") {
+								alert(data.message); // Ou afficher dans un div vert
+							} else {
+								alert(data.message); // Ou afficher dans un div rouge
+							}
+						})
+						.catch(error => {
+							console.error('Erreur:', error);
+							alert("Erreur réseau !");
+						});
+				});
+			});
+		</script>
+	</main>
+</body>
+
+</html>
