@@ -41,6 +41,7 @@ header {
   position: sticky;
   top: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.159);
+  width: 100%;
   z-index: 100;
 }
 header nav ul {
@@ -94,7 +95,7 @@ main {
   column-gap: 1rem;
 }
 #hero .gauche {
-  width: 50%;
+  padding-left: 100px;
 }
 #hero .gauche,
 .droite {
@@ -144,22 +145,25 @@ main {
   box-shadow: 5px 5px 30px #eb821a;
 }
 #hero .droite {
-  width: 20%;
-  height: 379px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
-  border: 2px solid #fff;
-  overflow: hidden;
 }
-
 .droite img {
   width: 100%;
   height: 100%;
+  border-radius: 45px;
   object-fit: contain;
-  /* border: 2px solid var(--var-bg-light); */
 }
+/* #hero .droite {
+  width: 20%;
+  height: 379px;
+  border-radius: 15px;
+  border: 2px solid #fff;
+  overflow: hidden;
+} */
 
 #apropos {
   margin-top: 2rem;
@@ -181,25 +185,24 @@ main {
 .aproposglobal {
   display: flex;
   width: 100%;
-  height: 30vh;
+  height: auto;
   background-color: #eee;
-  justify-content: space-between;
-  margin: 20px auto;
+  justify-content: center;
+  margin: 20px 0;
   padding: 40px;
-  box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.159);
   column-gap: 2.5rem;
 }
-/*.aproposGauche{
-	width: 50%;
-}*/
-
-.aproposGauche h3 {
+.aproposglobal .aproposGauche,
+.aproposmilieu,
+.aproposDroite {
+  flex: 1;
+}
+.aproposglobal h3 {
   color: #eb821a;
   font-weight: 900;
   font-size: 2rem;
-  margin-bottom: 5px;
 }
 
 .aproposGauche p {
@@ -207,11 +210,6 @@ main {
   font-size: 1.4rem;
 }
 
-.aproposmilieu h3 {
-  color: #eb821a;
-  font-weight: 900;
-  font-size: 2rem;
-}
 .aproposmilieu p {
   font-weight: 900;
   font-size: 1.4rem;
@@ -220,13 +218,9 @@ main {
   color: #eb821a;
   font-size: 1.2rem;
 }
-.aproposDroite h3 {
-  color: #eb821a;
-  font-weight: 900;
-  font-size: 2rem;
-  margin-bottom: 10px;
+.aproposglobal .aproposDroite ul li span {
+  font-weight: bolder;
 }
-
 #album h2 {
   font-weight: 900;
   font-size: 2rem;
@@ -238,8 +232,9 @@ main {
 }
 .album-list .gallerie {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 .album-list .gallerie .descriptions {
   transform: translateY(350px);
@@ -255,7 +250,7 @@ main {
   transform: translateY(-120px);
 }
 .gallerie .image {
-  width: 33%;
+  width: 32%;
   height: 350px;
   border-radius: 1rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
@@ -263,10 +258,11 @@ main {
   position: relative;
   cursor: pointer;
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
 }
 .gallerie .image img {
-  object-fit: cover;
+  object-fit: contain;
+  /* object-position: top; */
   height: 100%;
   width: 100%;
   border-radius: 1rem;
@@ -282,86 +278,164 @@ main {
 }
 
 .grandepartie {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  width: 100%;
-  height: 45vh;
-  background-color: #e4e6ec;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.159);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
   padding: 20px;
+  color: #f0f4ff;
+  height: 40vh;
+  background: linear-gradient(90deg, #19243d, #2f476e);
   border-radius: 20px;
-  margin: 15px 0 15px 0;
 }
-.grandepartie .partie1 p {
-  margin-top: 40px;
+.partie1,
+.partie2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
-.partie1 span {
-  font-weight: bolder;
+.partie1 i,
+.partie2 i {
+  margin-right: 8px;
   color: #eb821a;
 }
-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    "i1 i2"
-    "i3 i3"
-    "ta ta"
-    "vi bt";
-  align-items: center;
-  column-gap: 10px;
-  row-gap: -10;
+
+.partie1 ul,
+.partie2 ul {
+  list-style: none;
+  padding: 0;
 }
-input[type="email"] {
-  grid-area: i3;
+.partie2 a {
+  text-decoration: none;
+  color: #fff;
 }
-input,
-textarea {
-  padding: 10px;
-  font-family: "Poppins";
-  font-size: 1rem;
-  border-radius: 10px;
-  border: 1px solid white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.159);
+
+.partie2 a:hover {
+  color: #007bff;
 }
-input:focus {
-  outline: none;
-}
-textarea {
-  grid-area: ta;
-  resize: none;
-  /* margin: 0 5px 0 5px; */
-}
-textarea:focus {
-  outline: none;
-}
-#btn-submit {
-  grid-area: bt;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.159);
-  border-radius: 20px;
-  background-color: var(--var-secondary-color);
-  border: none;
-  color: var(--var-bg-light);
-  font-size: 1rem;
-  font-weight: bold;
-  height: 40px;
-  position: relative;
-  top: -7px;
-}
-#btn-submit:hover {
-  background-color: var(--var-bg-light);
-  border: 1px solid var(--var-secondary-color);
-  color: var(--var-secondary-color);
-}
+
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 footer span {
   font-size: 1.2rem;
   font-weight: bolder;
   color: #eb821a;
+}
+
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+
+  #hero {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+    row-gap: 2rem;
+  }
+
+  #hero .gauche {
+    padding-left: 0;
+    order: 2;
+  }
+
+  #hero .gauche .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  #hero .droite {
+    order: 1;
+    height: auto;
+  }
+
+  .droite img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .aproposglobal {
+    flex-direction: column;
+    padding: 20px;
+    row-gap: 2rem;
+  }
+
+  .aproposglobal .aproposGauche,
+  .aproposmilieu,
+  .aproposDroite {
+    width: 100%;
+    text-align: center;
+  }
+
+  .aproposglobal h3 {
+    font-size: 1.6rem;
+  }
+
+  .aproposGauche p,
+  .aproposmilieu p {
+    font-size: 1.2rem;
+  }
+
+  .aproposglobal .aproposDroite ul {
+    padding-left: 0;
+  }
+  .aproposglobal .aproposDroite ul {
+    list-style: none;
+  }
+
+  .aproposglobal .aproposDroite ul li {
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  .gallerie {
+    justify-content: center;
+  }
+  .gallerie .image {
+    width: 90%;
+  }
+  .album-list .gallerie .descriptions {
+    transform: translateY(
+      0
+    ); /* on désactive le hover trop "serré" sur mobile */
+  }
+
+  .album-list .gallerie .image:hover .descriptions,
+  .album-list .gallerie .image:hover img {
+    transform: none;
+  }
+  .grandepartie {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 10px;
+    height: auto;
+    gap: 30px;
+  }
+  .partie1,
+  .partie2 {
+    align-items: center;
+  }
+  .partie1 ul,
+  .partie2 ul {
+    padding: 0;
+  }
+
+  .partie2 a {
+    font-size: 1rem;
+  }
+
+  .partie1 li,
+  .partie2 li {
+    margin-bottom: 10px;
+  }
+  footer {
+    text-align: center;
+  }
 }
